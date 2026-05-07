@@ -6,43 +6,50 @@ Generics in TypeScript allow you to write flexible and reusable code while maint
 
 Generics allow you to create components that work with any data type.
 
-
+```ts
 function identity<T>(value: T): T {
   return value;
 }
 
 identity<string>("Hello");
 identity<number>(123);
-
+```
 
 * T is a type placeholder
 * It adapts based on input
 
 ## Without Generics (Problem)
+```ts
 function identity(value: any): any {
   return value;
 }
+```
 
 * No type safety
 * Loses type information
 
 ## With Generics (Solution)
+```ts
 function identity<T>(value: T): T {
   return value;
 }
+```
 
 * Keeps type
 * Ensures consistency
 
 ## Generics with Arrays
+```ts
 function getFirst<T>(arr: T[]): T {
   return arr[0];
 }
 
 getFirst<number>([1, 2, 3]);
 getFirst<string>(["a", "b"]);
+```
 
 ## Generics with Interfaces
+```ts
 interface ApiResponse<T> {
   data: T;
   success: boolean;
@@ -52,6 +59,7 @@ const response: ApiResponse<string> = {
   data: "Hello",
   success: true,
 };
+```
 
 ## Why Generics are Powerful
 

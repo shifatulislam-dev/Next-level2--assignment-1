@@ -6,6 +6,7 @@ As TypeScript projects grow larger, managing logic becomes difficult. Object-Ori
 
 Encapsulation means hiding internal data and controlling how it is accessed.
 
+```ts
 class BankAccount {
   private balance: number = 0;
 
@@ -19,6 +20,7 @@ class BankAccount {
     return this.balance;
   }
 }
+```
 
 * Protects data from direct access
 * Reduces unexpected bugs
@@ -28,6 +30,7 @@ class BankAccount {
 
 Abstraction means exposing only necessary parts and hiding complex implementation.
 
+```ts
 abstract class Payment {
   abstract pay(amount: number): void;
 }
@@ -37,6 +40,7 @@ class CreditCardPayment extends Payment {
     console.log(`Paid ${amount} using Credit Card`);
   }
 }
+```
 
 * Focus on what to do, not how
 * Reduces complexity
@@ -46,6 +50,7 @@ class CreditCardPayment extends Payment {
 
 Inheritance allows a class to reuse properties and methods from another class.
 
+```ts
 class Animal {
   speak() {
     console.log("Animal makes a sound");
@@ -57,6 +62,7 @@ class Dog extends Animal {
     console.log("Dog barks");
   }
 }
+```
 
 * Avoids code duplication
 * Promotes reuse
@@ -66,6 +72,7 @@ class Dog extends Animal {
 
 Polymorphism allows the same method to behave differently based on the object.
 
+```ts
 class Shape {
   draw() {
     console.log("Drawing shape");
@@ -83,6 +90,7 @@ class Square extends Shape {
     console.log("Drawing square");
   }
 }
+```
 
 * Increases flexibility
 * Makes systems scalable
