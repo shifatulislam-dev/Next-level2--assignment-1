@@ -25,5 +25,3 @@ const getProperty = <T extends object, K extends keyof T>(
   const propertyResult = object[key];
   return propertyResult;
 };
-const user = { id: 1, name: "John Doe", age: 21 };
-getProperty(user, "name")
