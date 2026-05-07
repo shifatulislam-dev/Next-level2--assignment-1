@@ -19,7 +19,11 @@ const checkType = (value: StringOrNumber): "String" | "Number" => {
 
 // Problem 4
 const getProperty = <T extends object, K extends keyof T>(
+  object: T,
+  key: K
 ): T[K] => {
-  const propertyValue = object[key];
-  return propertyValue;
+  const propertyResult = object[key];
+  return propertyResult;
 };
+const user = { id: 1, name: "John Doe", age: 21 };
+getProperty(user, "name")
