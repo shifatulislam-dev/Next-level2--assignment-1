@@ -4,3 +4,7 @@ const filterEvenNumbers = (numbers: number[]): number[] => {
 };
 
 // Problem 2
+const reverseString = (value: string): string => {
+  const reversedValue = value.split("").reverse().join("");
+  return reversedValue;
+};
