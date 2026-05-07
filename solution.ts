@@ -25,3 +25,10 @@ const getProperty = <T extends object, K extends keyof T>(
   const propertyResult = object[key];
   return propertyResult;
 };
+
+// Problem 5
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+}
