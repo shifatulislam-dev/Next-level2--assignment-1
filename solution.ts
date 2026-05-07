@@ -1,6 +1,7 @@
 // Problem 1
 const filterEvenNumbers = (numbers: number[]): number[] => {
-  return numbers.filter((number) => number % 2 === 0);
+  const evenNumbers = numbers.filter((number) => number % 2 === 0);
+  return evenNumbers;
 };
 
 // Problem 2
@@ -33,13 +34,52 @@ interface Book {
   publishedYear: number;
 }
 
-const toggleReadStatus = (book: Book) & { isRead: boolean } => {
+const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
   const updatedBook = {
-    book,
+    ...book,
     isRead: true,
   };
 
-  Book = updatedBook;
-
-  return Book;
+  return updatedBook;
 };
+
+// Problem 6
+class Person {
+  public name: string;
+  public age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Student extends Person {
+  public grade: string;
+
+  constructor(name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  getDetails(): string {
+    const studentDetails = `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+    return studentDetails;
+  }
+}
+
+// Problem 7
+const getIntersection = (firstArray: number[], secondArray: number[]): number[] => {
+  const interSection: number[] = [];
+
+  firstArray.map((number) => {
+    if (secondArray.includes(number)) {
+      interSection.push(number);
+    } else if (!secondArray.includes(number)) {
+      return;
+    }
+  });
+
+  return interSection;
+};
+
